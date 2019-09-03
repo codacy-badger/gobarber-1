@@ -5,7 +5,7 @@
 import express from 'express';
 // Importar as rotas de outro arquivo, para modularizar
 import routes from './routes';
-
+import './database';
 // Utilizar classes para representar funcionalidades da aplicação no backend
 class App {
   constructor() {
