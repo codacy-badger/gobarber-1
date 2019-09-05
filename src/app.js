@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // O Node ainda não lê algumas funcionalidades novas, já disponíveis no react
 // como o import.
 // Então nós temos que utilizar aplicações que transpilam isso para nós
@@ -17,6 +18,12 @@ class App {
 
   middlewares() {
     this.server.use(express.json());
+    this.server.use((req, res, next) => {
+      console.time('Request');
+      console.log(`METHOD: ${req.method}\nURL: ${req.url}`);
+      next();
+      console.timeEnd('Request');
+    });
   }
 
   routes() {
