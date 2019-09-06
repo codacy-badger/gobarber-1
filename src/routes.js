@@ -9,9 +9,9 @@ import access from './app/middlewares/access';
 // Utiliza apenas o módulo Router
 const routes = new Router();
 
-//
-
+// Access log
 routes.use(access);
+// Routes
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 routes.get('/users/:email', UserController.index);
@@ -19,7 +19,7 @@ routes.get('/users/:email', UserController.index);
 // Routes from now on, will use this middleware(global from this point)
 routes.use(authMiddleware);
 
-routes.put('/users', authMiddleware, UserController.update);
+routes.put('/users', UserController.update);
 
 // Alteração no banco de dados deve ser assíncrona
 /* routes.get('/', async (req, res) => {
