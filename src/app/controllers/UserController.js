@@ -15,6 +15,10 @@ class UserController {
     });
   }
 
+  async update(req, res) {
+    return res.json({ ok: true });
+  }
+
   async index(req, res) {
     const user = await User.findOne({ where: { email: req.params.email } });
     if (!user) {

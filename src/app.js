@@ -18,12 +18,6 @@ class App {
 
   middlewares() {
     this.server.use(express.json());
-    this.server.use((req, res, next) => {
-      console.time('Request');
-      console.log(`METHOD: ${req.method}\nURL: ${req.url}`);
-      next();
-      console.timeEnd('Request');
-    });
   }
 
   routes() {
