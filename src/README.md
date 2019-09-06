@@ -2,4 +2,4 @@
 
 ## Go Barber
 
-Backend da aplicação para agendamentos de serviços que beleza utilizando o NodeJS, implementando microserviços, autenticação JWT e Sequelize ORM.
+Backend da aplicação para agendamentos de serviços que beleza utilizando o NodeJS, implementando microserviços, autenticação JWT com Bcrypt, Sequelize ORM.
