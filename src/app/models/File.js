@@ -11,6 +11,8 @@ class File extends Model {
         sequelize, // Precisa ser passado como objeto do que a tabela usuário pode receber para o INIT
       }
     );
+
+    return this;
   }
 }
 
