@@ -25,6 +25,7 @@ class User extends Model {
       }
     });
     // Sempre retorna o Model que foi inicializado
+
     return this;
   }
 
