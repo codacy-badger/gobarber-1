@@ -23,12 +23,12 @@ routes.post('/users', UserController.store);
 
 routes.post('/sessions', SessionController.store);
 
-routes.get('/users/:email', UserController.index);
-
 // Routes from now on, will use this middleware(global from this point)
 routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
+
+routes.get('/users/', UserController.index);
 
 routes.get('/providers', ProviderController.index);
 

@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import User from '../models/User';
+import File from '../models/File';
 
 class UserController {
   async store(req, res) {
@@ -73,18 +74,17 @@ class UserController {
   }
 
   async index(req, res) {
-    const user = await User.findOne({ where: { email: req.params.email } });
-    if (!user) {
-      return res.status(400).json({ error: 'User not exists' });
-    }
-
-    const { id, name, email, provider } = user;
-    return res.json({
-      id,
-      name,
-      email,
-      provider,
+    const users = await User.findAll({
+      where: { provider: false },
+      attributes: ['id', 'name', 'email', 'avatar_id'],
+      include: {
+        model: File,
+        as: 'avatar',
+        attributes: ['name', 'path', 'url'],
+      },
     });
+
+    return res.status(200).json(users);
   }
 }
 
