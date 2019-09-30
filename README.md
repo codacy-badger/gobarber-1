@@ -1,6 +1,4 @@
-[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-
-[![node](https://img.shields.io/node/v/package.svg?style=flat-square)]()
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jvictorfarias/gobarber.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jvictorfarias/gobarber/context:javascript)
 
 ## Go Barber
 
