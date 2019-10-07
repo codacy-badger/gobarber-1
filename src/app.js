@@ -1,8 +1,9 @@
-/* eslint-disable no-console */
 // O Node ainda não lê algumas funcionalidades novas, já disponíveis no react
 // como o import.
 // Então nós temos que utilizar aplicações que transpilam isso para nós
 // Temos o Babel por exemplo, mas irei utilizar o Sucrase por ser mais rápido.
+import 'dotenv/config';
+
 import express from 'express';
 import path from 'path';
 // Importar as rotas de outro arquivo, para modularizar
@@ -44,9 +45,13 @@ class App {
 
   exceptionHandler() {
     this.server.use(async (err, req, res, next) => {
-      const errors = await new Youch(err, req).toJSON();
+      if (process.env.NODE_ENV === 'development') {
+        const errors = await new Youch(err, req).toJSON();
 
-      return res.status(500).json(errors);
+        return res.status(500).json(errors);
+      }
+
+      return res.status(500).json({ error: 'Internal server error' });
     });
   }
 }

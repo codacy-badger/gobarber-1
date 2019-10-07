@@ -2,3 +2,4 @@ node_modules
 mail.js
 .gitignore
 .vscode
+.env
